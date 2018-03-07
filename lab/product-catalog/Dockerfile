@@ -1,11 +1,5 @@
-FROM maven:3.5-jdk-8 as BUILD
-
-COPY . /usr/src/app
-RUN mvn --batch-mode -f /usr/src/app/pom.xml clean package -Ddockerfile.skip -DskipTests
-
-FROM openjdk:8-jdk
-ENV PORT 8080
-EXPOSE 8080
-COPY --from=BUILD /usr/src/app/target/product-catalog.jar /opt/app.jar
-WORKDIR /opt
-CMD ["java", "-jar", "app.jar"]
+FROM openjdk:8-jdk-alpine
+VOLUME /tmp
+ARG JAR_FILE
+COPY target/product-catalog.jar /product-catalog.jar
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/product-catalog.jar"]
