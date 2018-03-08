@@ -6,16 +6,15 @@
 #  $1 - Resource Group Name
 #  $2 - Resource Group location (e.g eastus)
 
-echo "###### Creating AKS Cluster $1-aks-cluster01 in Region: $1 and Location: $2"
+echo "###### Creating AKS Cluster $1-aks-cluster01 in Resource Group: $1 and Location: $2"
 az aks create -n $1-aks-cluster01 -g $1 -c 2 -k 1.7.7 --generate-ssh-keys -l $2
 
 echo "###### Generating Kubernetes Configuration Files"
 az aks get-credentials -n $1-aks-cluster01 -g $1
 
-echo "###### Installing Helm into: $1-aks-cluster01"
-helm init
-
+echo "######"
+echo "###### Follow up step 1, execute:  helm init"
+#helm init
+echo "###### Follow up step 2, execute:  draft init"
 echo "###### Installing Draft into: $1-aks-cluster01"
-draft init
-
-echo "###### Azure AKS Cluster Configuration Complete"
+#draft init
