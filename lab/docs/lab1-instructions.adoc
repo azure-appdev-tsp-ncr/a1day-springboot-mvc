@@ -4,7 +4,7 @@
 :toc2:
 
 == Setup Notes:
-Created Windows 10 Pro VM in Azure using a D-v3 Series (Nested Virtualization for Docker), Standard D4s v3 (4 vcpus, 16 GB memory).  Then used instructions here for Powershell install of dependencies 
+Created Windows 10 Pro VM in Azure using a D-v3 Series (Nested Virtualization for Docker), Standard D4s v3 (4 vcpus, 16 GB memory).  Then used instructions here for Powershell install of dependencies - https://github.com/simholte/chocolately-java-developer-setup .  After install of Docker, disable TLS on the General Settings page for use with Spotify/Maven plugin.
 
 == Lab 1 - Deploying on OpenShift Application Runtimes
 
