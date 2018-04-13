@@ -3,6 +3,9 @@
 :data-uri:
 :toc2:
 
+== Setup Notes:
+Created Windows 10 Pro VM in Azure using a D-v3 Series (Nested Virtualization for Docker), Standard D4s v3 (4 vcpus, 16 GB memory).  Then used instructions here for Powershell install of dependencies 
+
 == Lab 1 - Deploying on OpenShift Application Runtimes
 
 In this lab, you will learn how to take an existing Spring Boot application that has been converted to use RHOAR (Red Hat OpenShift Application Runtimes).  RHOAR is a collection of Red Hat Supported Microservice Framworks optimized for deployment on OpenShift.  See http://launch.openshift.io for more information on the complete set of languages/technologies supported.
