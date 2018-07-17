@@ -16,10 +16,12 @@
     (Make sure your Docker Daemon Settings are updated to expose docker endpoint **without TLS**)
     ```
     mvn clean package 
+
+    docker build --rm --no-cache -f Dockerfile -t product-catalog:latest
     ```
 4. Test your local Docker Application Image and Product Catalog Springboot Application
    ```
-   docker run -it -p 8080:8080 springio/product-catalog:latest
+   docker run -it -p 8080:8080 product-catalog:latest
    ```
    Now open a browser to http://localhost:8080 and you should see something similar to the following Product Listing
 
