@@ -31,7 +31,7 @@
     --name buildProdCatalog \
     --image product-catalog:{{.Build.ID}} \
     --context https://github.com/azure-appdev-tsp-ncr/a1day-springboot-mvc \
-    --file ./lab/product-catalog/Dockerfile \
+    --file ./lab/azure/Dockerfile \
     --branch master \
     --git-access-token $GIT_PAT
   ```
@@ -40,6 +40,12 @@
   ```
   az acr build-task run --registry $ACR_NAME --name buildProdCatalog
   ```
+
+* Demo Automated Build with created Webhook
+  ```
+  # Git repo code will be changed/committed
+  # Stream the Build Logs
+  az acr build-task logs --registry $ACR_NAME
 
 ## Deploy database container to AKS
 
