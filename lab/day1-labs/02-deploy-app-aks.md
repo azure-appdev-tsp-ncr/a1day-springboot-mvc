@@ -1,6 +1,6 @@
 # Deploy the Product Catalog Springboot App to AKS
 
-* In Azure Cloud Shell use ACR Build + **kubectl** to deploy the Springboot Fat JAR to AKS
+* In Azure Cloud Shell use **ACR Build + kubectl** to deploy the Springboot Fat JAR to AKS
 
 ## Create Azure Container Registry (ACR) & ACR Build to push Docker Image to private ACR Repo
 
