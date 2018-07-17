@@ -12,14 +12,14 @@ spec:
     port: 8080
     targetPort: 8080
   selector:
-    name: prod-catalog-web
+    name: product-web
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name:  prod-catalog-web-deploy
+  name:  product-web-deploy
   labels:
-    name:  prod-catalog-web
+    name:  product-web
 spec:
   replicas: 1
   strategy:
@@ -30,13 +30,13 @@ spec:
   template:
     metadata:
       labels:
-        name:  prod-catalog-web
+        name:  product-web
     spec:
       imagePullSecrets:
         - name: acr-secret
       containers:
       - image: gnhtspfpxdemo.azurecr.io/product-catalog:aa6
-        name:  prod-catalog-web-cntnr
+        name:  product-web-cntnr
         resources:
           requests:
             cpu: "0.5"
@@ -52,6 +52,6 @@ spec:
               fieldPath: status.podIP
         ports:
         - containerPort:  8080
-          name:  prod-catalog-web
+          name:  product-web
         imagePullPolicy: Always
       restartPolicy: Always
