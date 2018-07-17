@@ -25,6 +25,7 @@
 		<postgresql.version>9.4.1212</postgresql.version>
 		<maven.spring-boot.plugin.version>1.4.1.RELEASE</maven.spring-boot.plugin.version>
 		<spring-boot.bom.version>1</spring-boot.bom.version>
+		<docker.image.prefix>springio</docker.image.prefix>
 	</properties>
 
 	<dependencyManagement>
@@ -131,6 +132,25 @@
 					</execution>
 				</executions>
 			</plugin>
+                       <plugin>
+                                <groupId>com.spotify</groupId>
+                                <artifactId>dockerfile-maven-plugin</artifactId>
+                                <version>1.4.0</version>
+								<executions>
+									<execution>
+									<id>default</id>
+									<goals>
+										<goal>build</goal>
+									</goals>
+									</execution>
+								</executions>
+                                <configuration>
+                                        <repository>${docker.image.prefix}/${project.artifactId}</repository>
+	                                 <buildArgs>
+		                                        <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+	                                 </buildArgs>
+                                </configuration>
+                      </plugin>
 		</plugins>
 	</build>
 
