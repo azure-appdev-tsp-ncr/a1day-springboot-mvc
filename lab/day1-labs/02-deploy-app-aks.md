@@ -9,7 +9,7 @@
   git clone https://github.com/azure-appdev-tsp-ncr/a1day-springboot-mvc.git
   cd ./a1day-springboot-mvc/lab/product-catalog
   ```
-  
+
 * Create Azure Container Registry (ACR) using Resouce Group/Location from GBC-Container Lab
    ```
    ACR_NAME=<registry-name>
@@ -48,13 +48,13 @@
   # List Registry Builds
   az acr build-task list-builds --registry $ACR_NAME --output table
   ```
-## Deploy database container to AKS
+## Deploy product-catalog container to AKS
 
-* Use the kubectl CLI to deploy each app
+* Use the kubectl CLI to deploy app
     ```
-    cd ~/gbc-containers/labs/helper-files
+    cd ../helper-files
 
-    kubectl apply -f heroes-db.yaml
+    kubectl apply -f product-catalog.yaml
     ```
 
 * Get mongodb pod name and set **MONGO_POD** environment variable
