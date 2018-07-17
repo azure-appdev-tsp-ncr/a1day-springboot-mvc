@@ -1,4 +1,4 @@
-# Deploy the Product Catalog Springboo App to AKS
+# Deploy the Product Catalog Springboot App to AKS
 
 * In Azure Cloud Shell use ACR Build + **kubectl** to deploy the Springboot Fat JAR to AKS
 
@@ -9,10 +9,7 @@
   git clone https://github.com/azure-appdev-tsp-ncr/a1day-springboot-mvc.git
   cd ./a1day-springboot-mvc/lab/product-catalog
   ```
-* Build/Package the Product Catalog Application
-    ```
-    mvn clean package 
-    ```
+  
 * Create Azure Container Registry (ACR) using Resouce Group/Location from GBC-Container Lab
    ```
    ACR_NAME=<registry-name>
@@ -44,9 +41,13 @@
 * Demo Automated Build with created Webhook
   ```
   # Git repo code will be changed/committed
+ 
   # Stream the Build Logs
   az acr build-task logs --registry $ACR_NAME
 
+  # List Registry Builds
+  az acr build-task list-builds --registry $ACR_NAME --output table
+  ```
 ## Deploy database container to AKS
 
 * Use the kubectl CLI to deploy each app
