@@ -28,6 +28,6 @@ This is a lab aimed at enabling JavaEE developers using Spring Boot, common fram
 
 Here is a short list for the available exercises:
 
-* link:lab/docs/lab1-instructions.adoc[Lab 1 - **(Under Development)** Build/Test local Spring Boot Docker Container]
-* link:lab/docs/lab2-instructions.adoc[Lab 2 - **(Under Development)** Create and Execute Jenkins 2.0 Build Pipeline]
-* link:lab/docs/lab3-instructions.adoc[Lab 3 - **(Under Development)** Deploy Spring Boot Application & DB to Azure AKS]
+* link:lab/day1-labs/00-lab-environment.md[Lab 0 - Local Environment or Azure Development VM Setup]
+* link:lab/day1-labs/01-build-local-app.md[Lab 1 - Build & Test Local Springboot/Docker Application]
+* link:lab/day1-labs/02-deploy-app-aks.md[Lab 2 - Deploy Spring Boot Application using Azure ACR Build and AKS]
