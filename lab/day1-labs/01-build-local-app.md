@@ -17,7 +17,7 @@
     ```
     mvn clean package 
 
-    docker build --rm --no-cache -f Dockerfile -t product-catalog:latest
+    docker build --rm --no-cache -f Dockerfile -t product-catalog:latest .
     ```
 4. Test your local Docker Application Image and Product Catalog Springboot Application
    ```
