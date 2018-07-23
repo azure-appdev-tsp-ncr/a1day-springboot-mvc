@@ -27,13 +27,13 @@ public class ProductCatalogApplicationDevTests {
 	@Test
 	public void testFindAll() {
 		List<Product> productList = products.findAll();
-		assertEquals(productList.size(), 8);
+		assertEquals(productList.size(), 7);
 	}
 	
 	@Test
 	public void testFindOne() {
-		Product product = products.findOne(444435L);
-		assertTrue("Oculus Rift".equals(product.getName()));
+		Product product = products.findOne(444436L);
+		assertTrue("Lytro Camera".equals(product.getName()));
 	}
 	
 	
