@@ -21,7 +21,7 @@
 * Create ACR Build Task
   ```
   GIT_USER=ghoelzer-rht
-  GIT_PAT=920d9b2edb0e560742ffdb8bbb65ae69e261559c
+  GIT_PAT=af527c8b06e7b74fd6f47ed86585f8455681ee03
 
   az acr build-task create \
     --registry $ACR_NAME \
