@@ -21,9 +21,9 @@
 * Create ACR Build Task
   ```
   GIT_USER=ghoelzer-rht
-  GIT_PAT=4f0df9506292e21d9b24f792d35054c01e38ccaf
+  GIT_PAT=<Git Personal Access Token>
 
-  az acr build-task create \
+  az acr task create \
     --registry $ACR_NAME \
     --name buildProdCatalog \
     --image product-catalog:{{.Build.ID}} \
@@ -35,7 +35,7 @@
 
 * Manually Trigger the ACR Build Task
   ```
-  az acr build-task run --registry $ACR_NAME --name buildProdCatalog
+  az acr task run --registry $ACR_NAME --name buildProdCatalog
   ```
 
 * Demo Automated Build with created Webhook
@@ -43,10 +43,10 @@
   # Git repo code will be changed/committed
  
   # Stream the Build Logs
-  az acr build-task logs --registry $ACR_NAME
+  az acr task logs --registry $ACR_NAME
 
   # List Registry Builds
-  az acr build-task list-builds --registry $ACR_NAME --output table
+  az acr task list-runs --registry $ACR_NAME --output table
   ```
 ## Deploy product-catalog container to AKS
 
