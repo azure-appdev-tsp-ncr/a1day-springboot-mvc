@@ -10,7 +10,7 @@ export GIT_USER=$1
 export GIT_PAT=$2
 export ACR_NAME=$3
 # Create ACR Build Task, will be triggerd by Git push on source repo
-az acr build-task create \
+az acr task create \
   --registry $ACR_NAME \
   --name buildProdCatalog \
   --image product-catalog:{{.Build.ID}} \
