@@ -14,8 +14,9 @@ AKS_NAMESPACE=$4                # Azure Kubernetes Service Target Namespace
 ACR_PULL_USR=$(az keyvault secret show --vault-name $AKV_NAME -n $ACR_NAME-pull-usr --query value -o tsv)
 ACR_PULL_PWD=$(az keyvault secret show --vault-name $AKV_NAME -n $ACR_NAME-pull-pwd --query value -o tsv)
 #
+
 # Update "latest" tag to target image tage
 #
-docker login --username $ACR_PULL_USR --password $ACR_PULL_PWD $ACR_LOGIN_SERVER
-docker tag product-catalog:$ACR_IMAGE_TAG product-catalog:latest
+# sed replace of tag in deployment yaml
+# sed -e $(echo "s/latest/$TEST_TAG/g") ./product-catalog.yaml
 
