@@ -14,9 +14,15 @@ AKS_NAMESPACE=$4                # Azure Kubernetes Service Target Namespace
 ACR_PULL_USR=$(az keyvault secret show --vault-name $AKV_NAME -n $ACR_NAME-pull-usr --query value -o tsv)
 ACR_PULL_PWD=$(az keyvault secret show --vault-name $AKV_NAME -n $ACR_NAME-pull-pwd --query value -o tsv)
 #
-
-# Update "latest" tag to target image tage
+# Create K8S Secret for ACR Access
+kubectl create secret docker-registry acr-secret \
+--docker-server=$ACR_LOGIN_SERVER \ 
+--docker-username=$ACR_PULL_USR \
+--docker-password=$ACR_PULL_PWD \
+--docker-email=aks@k8s.com
+--namspace=$AKS_NAMESPACE
 #
-# sed replace of tag in deployment yaml
-# sed -e $(echo "s/latest/$TEST_TAG/g") ./product-catalog.yaml
+# kubectl deployment using sed replace of registry/tag in deployment yaml
+sed -e $(echo "s/myregistry/$ACR_NAME/g;s/latest/$ACR_IMAGE_TAG/g") ./product-catalog.yaml | kubectl apply -f - --namspace=$AKS_NAMESPACE
+
 
