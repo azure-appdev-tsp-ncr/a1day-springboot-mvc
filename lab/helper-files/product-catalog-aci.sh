@@ -3,7 +3,8 @@
 # Parameters:
 # $1 - Resource Group to use for Key Vault
 # $2 - ACR Registry Name
-# $3 - Azure Key Vault
+# $3 - ACR product-catalog repo Tag
+# $4 - Azure Key Vault Name
 #
 RES_GROUP=$1                    # Resource Group name
 ACR_NAME=$2                     # Azure Container Registry Name
