@@ -8,6 +8,8 @@ Greg Hoelzer
 
 This repository is the used to develop training materials for Azure App Dev in Day Workshop materials. This module/lab focuses on https://projects.spring.io/spring-boot/[Spring Boot]. The main author of _{doctitle}_ is *{author}*, MS Azure and is based on the more generalized Red Hat Spring Enablement Labs found here - https://github.com/rhoar-enablement/spring. The current version ({revnumber})  of this lab was last updated on {revdate}.
 
+== Updates in Progress to support Springboot/Azure Red Hat OpenShift Workshop
+
 == Lab Overview
 
 [cols="1,4", options="header"]
