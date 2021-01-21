@@ -11,7 +11,7 @@
     <body>
         <div class="container">
             <div class="page-header">
-                <h1>Admin - Product List v3.00 - DOT Foods Workshop</h1>
+                <h1>Admin - Product List v1.00 - ARO Workshop</h1>
             </div>
             <table class="table table-striped">
                 <thead>
